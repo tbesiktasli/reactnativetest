@@ -22,5 +22,5 @@ jobs:
         clean archive \
         -sdk iphoneos \
         -configuration Debug \
-        -UseModernBuildSystem=NO \
-        -archivePath $PWD/reactnativetest"
+        -archivePath $PWD/reactnativetest \
+        CODE_SIGNING_ALLOWED=NO"
