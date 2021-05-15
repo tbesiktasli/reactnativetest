@@ -15,6 +15,7 @@ jobs:
     - run: npm ci
 
     - run: chmod +x ./gradlew
+      working-directory: android
 
     - run: ./gradlew assembleDebug -Dorg.gradle.logging.level=info
       working-directory: android
