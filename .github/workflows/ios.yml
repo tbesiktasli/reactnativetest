@@ -17,11 +17,10 @@ jobs:
 
     - name: Build iOS (debug)
       run: "xcodebuild \
-        -project ios/reactnativetest.xcodeproj \
+        -workspace ios/reactnativetest.xcworkspace \
         -scheme reactnativetest \
         clean archive \
         -sdk iphoneos \
         -configuration Debug \
         -UseModernBuildSystem=NO \
-        -archivePath $PWD/reactnativetest \
-        CODE_SIGNING_ALLOWED=NO"
+        -archivePath $PWD/reactnativetest"
