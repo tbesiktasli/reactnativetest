@@ -24,3 +24,11 @@ jobs:
         -configuration Debug \
         -archivePath $PWD/reactnativetest \
         CODE_SIGNING_ALLOWED=NO"
+
+    - name: Compress .xcarchive
+      run: zip -r -9 reactnativetest.xcarchive.zip $PWD/reactnativetest.xcarchive/
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ios-xarchive
+        path: reactnativetest.xcarchive.zip
