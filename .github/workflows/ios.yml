@@ -10,7 +10,7 @@ jobs:
       with:
         node-version: 14.x
     - run: npm ci
-    - run: xcode-select -p
+    - run: xcode-select -s /Applications/Xcode_12.app
     - run: pod install
       working-directory: ios
       name: Install pod dependencies
