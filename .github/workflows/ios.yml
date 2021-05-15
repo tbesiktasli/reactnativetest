@@ -10,18 +10,14 @@ jobs:
       with:
         node-version: 14.x
     - run: npm ci
-    - run: sudo xcode-select -s /Applications/Xcode_12.app
+    - run: xcode-select -p
     - run: pod install
       working-directory: ios
       name: Install pod dependencies
 
-    - name: List files in the repository
-      run: |
-        ls ${{ github.workspace }}
-
     - name: Build iOS (debug)
       run: "xcodebuild \
-        -workspace ios/reactnativetest.xcworkspace \
+        -project ios/reactnativetest.xcodeproj \
         -scheme reactnativetest \
         clean archive \
         -sdk iphoneos \
